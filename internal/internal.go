@@ -2,7 +2,6 @@ package internal
 
 import (
 	"errors"
-	"log"
 	"strconv"
 	"strings"
 	"time"
@@ -21,7 +20,7 @@ type TimeRangeParams struct {
 // find max slice in a time range
 func MaxSliceInTimeRange(data []string, params TimeRangeParams) (int, error) {
 	sot := [][]int{}
-	maxSlice := 0
+	maxSlice := 1
 
 	for _, timeRange := range data {
 		if err := ValidateTimeRange(TimeRangeParams{
@@ -70,7 +69,6 @@ func ValidateTimeRange(params TimeRangeParams) error {
 		}
 		t, err := time.Parse(params.Layout, str)
 		if err != nil {
-			log.Println(err)
 			return err
 		}
 		times = append(times, t)

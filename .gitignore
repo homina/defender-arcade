@@ -3,4 +3,4 @@ vendor*
 *.html
 fmt
 .DS_Store
-cmd/royal-rumble
+cmd/defender-arcade

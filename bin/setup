@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+echo $DIR
+cd $DIR/../cmd && go build -o defender-arcade
+go test defender-arcade/pkg/file -coverprofile file.out
+go test defender-arcade/internal -coverprofile internal.out
